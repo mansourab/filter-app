@@ -2,14 +2,15 @@
 import './styles/app.css';
 
 import noUiSlider from 'nouislider';
-import 'nouislider/distribute/nouislider.css'
+import 'nouislider/distribute/nouislider.css';
 
-// start the Stimulus application
-// import './bootstrap'; 
+import Filter from './modules/Filter';
+
+
+new Filter(document.querySelector('.js-filter'));
 
 const slider = document.getElementById('price-slider');
 
-console.log(slider.dataset.min);
 
 if (slider) {
 
@@ -37,5 +38,9 @@ if (slider) {
             max.value = Math.round(values[1]);
         }
     });
+
+    range.on('end', function(values, handle){
+        min.dispatchEvent(new Event('change'))
+    })
 }
 

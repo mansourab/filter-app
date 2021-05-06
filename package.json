@@ -16,6 +16,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "flip-toolkit": "^7.0.13",
         "nouislider": "^14.7.0"
     }
 }
